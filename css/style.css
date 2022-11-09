@@ -1,0 +1,40 @@
+:root{
+    --js-cell-number: 1;
+}
+
+header{
+    bottom: 0;
+    transition: bottom .3s;
+    z-index: 10;
+}
+
+header.active{
+    bottom: calc(100% - 70px);
+}
+
+main .container{
+    box-shadow: 1px 1px 5px gray;
+    opacity: 0;
+    transition: opacity .7s;
+}
+
+main .container.active{
+    opacity: 1;
+}
+
+.cell-container{
+    height: 100%;
+    aspect-ratio: 1/1;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.my-cell{
+    flex-basis: calc(100% / var(--js-cell-number));
+    aspect-ratio: 1/1;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
