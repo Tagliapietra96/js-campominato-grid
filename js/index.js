@@ -26,6 +26,22 @@ function addActive(querySelector){
     domElement.classList.add('active');
 };
 
+function createGrid(domElement, numOfCols){
+
+    for (let i = 1; i <= (Math.pow(numOfCols, 2)); i++){
+        let newCell = document.createElement('div');
+        newCell.classList.add('my-cell');
+        newCell.innerHTML = i;
+
+        newCell.addEventListener('click', function(){
+            newCell.classList.toggle('bg-info');
+            console.log(newCell.textContent);
+        });
+
+        domElement.append(newCell);
+    };
+}
+
 // COSTANTI ****************************************************************
 
 const myBtnEl = el('button');
@@ -42,5 +58,5 @@ myBtnEl.addEventListener('click', function(){
     addActive('main .container');
 
     cellContainerEl.innerHTML = '';
-
+    
 });
