@@ -58,5 +58,5 @@ myBtnEl.addEventListener('click', function(){
     addActive('main .container');
 
     cellContainerEl.innerHTML = '';
-    
+    createGrid(cellContainerEl, difficulty);
 });
