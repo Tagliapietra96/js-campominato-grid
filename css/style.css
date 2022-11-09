@@ -15,7 +15,7 @@ header.active{
 main .container{
     box-shadow: 1px 1px 5px gray;
     opacity: 0;
-    transition: opacity .7s;
+    transition: opacity 1s;
 }
 
 main .container.active{
