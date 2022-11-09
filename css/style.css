@@ -22,6 +22,15 @@ main .container.active{
     opacity: 1;
 }
 
+.btn-danger{
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.btn-danger.active{
+    opacity: 1;
+}
+
 .cell-container{
     height: 100%;
     aspect-ratio: 1/1;

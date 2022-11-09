@@ -26,6 +26,16 @@ function addActive(querySelector){
     domElement.classList.add('active');
 };
 
+/**
+ * funzione che in automatico rimuove la classe active all'elemento indicato 
+ * tramite selettore css
+ * @param {string} querySelector inserisci un selettore css valido
+ */
+function removeActive(querySelector){
+    const domElement = document.querySelector(querySelector);
+    domElement.classList.remove('active');
+};
+
 function createGrid(domElement, numOfCols){
 
     for (let i = 1; i <= (Math.pow(numOfCols, 2)); i++){
@@ -44,7 +54,8 @@ function createGrid(domElement, numOfCols){
 
 // COSTANTI ****************************************************************
 
-const myBtnEl = el('button');
+const myBtnEl = el('button.btn-primary');
+const exitBtnEl =el('button.btn-danger');
 const cellContainerEl = el('.cell-container');
 const rootEl = el(':root');
 
@@ -56,7 +67,14 @@ myBtnEl.addEventListener('click', function(){
 
     addActive('header');
     addActive('main .container');
+    addActive('button.btn-danger');
 
     cellContainerEl.innerHTML = '';
     createGrid(cellContainerEl, difficulty);
+});
+
+exitBtnEl.addEventListener('click', function(){
+    removeActive('header');
+    removeActive('main .container');
+    removeActive('button.btn-danger');
 });
